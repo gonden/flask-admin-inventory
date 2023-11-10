@@ -1,33 +1,3 @@
-# flask-admin-inventory
-Flask-admin for inventory of servers
-# Dockerized Python flask-admin Application with Prometheus `node_exporter` Configuration
-
-This project consists of a Dockerized Python application along with a Jinja2 template for generating Prometheus `node_exporter` configurations. The Dockerfile is set up to containerize a Python application, and the template is designed to generate job configurations for `node_exporter` based on host information.
-
-## Dockerized Python Application
-
-### Dockerfile
-
-The Dockerfile (`Dockerfile`) in this project is used to create a Docker image for running a Python application. Here's what the Dockerfile does:
-
-1. Uses the official Python 3 base image.
-2. Sets up a working directory in the container.
-3. Copies the `requirements.txt` file to the container and installs Python dependencies.
-4. Copies the application code into the container.
-5. Configures the container to run the Python application specified by `CMD`.
-
-You can customize the Dockerfile to suit your specific application requirements, including setting environment variables, exposed ports, and additional configuration.
-
-To build the Docker image, use the following command:
-
-```bash
-docker build -t my-python-app .
-
-ChatGPT
-
-Certainly! Here's a README file that includes both the Dockerfile setup and the Prometheus node_exporter Jinja2 template documentation:
-
-markdown
 
 # Dockerized Python Application with Prometheus `node_exporter` Configuration
 
@@ -51,6 +21,7 @@ To build the Docker image, use the following command:
 
 ```bash
 docker build -t my-python-app .
+```
 
 To run a container based on the image:
 
