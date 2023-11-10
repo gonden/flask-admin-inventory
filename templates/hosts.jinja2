@@ -1,0 +1,22 @@
+####################################################################
+#############           NODE_EXPORTER - {{infra}}      #############
+####################################################################
+
+{# for each host in the model hosts, create job for prometheus.yaml #}
+{%- for host in hosts %}
+    {%- if host.group != 'unknown' and host.env != 'unknown' %}
+
+  - job_name: '{{host.hostname}}'
+    static_configs:
+      - targets: ['{{host.hostname}}:9100']
+        labels:
+          env: '{{host.env}}'
+          group: '{{host.group}}'
+          type: 'server'
+          infra: '{{infra}}'
+
+    {%- endif %}
+{%- endfor %}
+
+
+
